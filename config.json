@@ -1,0 +1,22 @@
+{
+    "Params": {
+        "local_server":"True",
+        "local_Uri": "mysql+pymysql://root:@localhost/my_blog",
+        "Prod_Uri":"mysql+pymysql://root:@localhost/my_blog",
+        "fb_Url":"https://www.facebook.com/moazzam.shahid.54/",
+        "Tw_Url":"https://twitter.com/Moazzam0007",
+        "gmail-user":"mshahid.msit21seecs@seecs.edu.pk",
+        "gmail-password":"moazzam@007",
+        "no_of_Posts":3,
+        "login_image":"bootstrap-logo.svg",
+        "admin_user":"Moazzam",
+        "admin_password": "Moazzam@007",
+        "upload_location": "D:\\Python\\Flask-1\\static\\files\\"
+
+    },
+    "Passwords":{
+
+    }
+
+
+}

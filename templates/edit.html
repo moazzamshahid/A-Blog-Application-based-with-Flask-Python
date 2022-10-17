@@ -1,0 +1,76 @@
+
+     {% extends "layout.html" %}
+     {% block body %}
+     <!-- Page Header-->
+        <header class="masthead" style="background-image: url( {{url_for('static',filename='assets/img/home-bg.jpg')}})">
+            <div class="container position-relative px-4 px-lg-5">
+                <div class="row gx-4 gx-lg-5 justify-content-center">
+                    <div class="col-md-10 col-lg-8 col-xl-7">
+                        <div class="site-heading">
+                            <h1>Admin Panel</h1>
+                            <span class="subheading">Manage your posts and change them</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </header>
+        <div class="container px-4 px-lg-5">
+            <div class="row gx-4 gx-lg-5 justify-content-center">
+                <div class="col-md-10 col-lg-8 col-xl-7">
+        <h1>Basic Action</h1>
+        <a href="/dashboard"><button class="btn btn-primary">Dashboard Home</button></a>
+        <a href="/logout"><button class="btn btn-primary">Log Out</button></a>
+       <h1>Edit Posts</h1>
+       <form id="contactForm" method="POST" action="/edit/{{Post.id}}" >
+        <div class="form-floating">
+            <input class="form-control" id="Title" type="text" name="Title" value="{{Post.Title}}" placeholder="Enter your Title..." data-sb-validations="required" />
+            <label for="Title">Title</label>
+            <div class="invalid-feedback" data-sb-feedback="name:required">A Title is required.</div>
+        </div>
+        <div class="form-floating">
+            <input class="form-control" id="Slug" type="text" name="Slug" value="{{Post.Slug}}" placeholder="Enter your Slug..." data-sb-validations="required,email" />
+            <label for="Slug">Slug</label>
+            <div class="invalid-feedback" data-sb-feedback="email:required">A Slug is required.</div>
+        </div>
+        <div class="form-floating">
+            <input class="form-control" id="img_file" type="text" name="img_file" value="{{Post.img_file}}" placeholder="img.jpg" data-sb-validations="required" />
+            <label for="img_file">Image file</label>
+            <div class="invalid-feedback" data-sb-feedback="phone:required">An Image file is required.</div>
+        </div>
+        <div class="form-floating">
+            <input class="form-control" id="post_by" type="text" name="post_by" value="{{Post.Post_by}}" placeholder="e.g...Moazzam Shahid" data-sb-validations="required" />
+            <label for="post_by">Post by</label>
+            <div class="invalid-feedback" data-sb-feedback="phone:required">A Name is required.</div>
+        </div>
+        <div class="form-floating">
+            <textarea class="form-control" id="Content" name="Content"  placeholder="Enter your Content here..." style="height: 12rem" data-sb-validations="required">{{Post.Content}}</textarea>
+            <label for="Content">Content</label>
+            <div class="invalid-feedback" data-sb-feedback="message:required">A Content is required.</div>
+        </div>
+        <br />
+        <!-- Submit success message-->
+        <!---->
+        <!-- This is what your users will see when the form-->
+        <!-- has successfully submitted-->
+        <div class="d-none" id="submitSuccessMessage">
+            <div class="text-center mb-3">
+                <div class="fw-bolder">Form submission successful!</div>
+                To activate this form, sign up at
+                <br />
+                <a href="https://startbootstrap.com/solution/contact-forms">https://startbootstrap.com/solution/contact-forms</a>
+            </div>
+        </div>
+        <!-- Submit error message-->
+        <!---->
+        <!-- This is what your users will see when there is-->
+        <!-- an error submitting the form-->
+        <div class="d-none" id="submitErrorMessage"><div class="text-center text-danger mb-3">Error sending message!</div></div>
+        <!-- Submit Button-->
+        <button class="btn btn-primary text-uppercase enabled" id="submitButton" type="submit">Submit</button>
+    </form>
+
+                
+                   
+
+                    {% endblock %}
+       
